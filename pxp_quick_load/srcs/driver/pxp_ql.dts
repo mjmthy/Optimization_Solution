@@ -1,0 +1,12 @@
+pxp_ql_reserved:linux,pxp_ql {
+	compatible = "shared-dma-pool";
+	reusable;
+	size = <0x0 0x400000>;
+	alloc-ranges = <0x0 0x20000000 0x0 0x400000>;
+};
+
+pxp_ql {
+	compatible = "xxx,pxp_ql";
+	memory-region = <&pxp_ql_reserved>;
+	status = "okay";
+};
