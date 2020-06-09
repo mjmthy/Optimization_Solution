@@ -1,8 +1,3 @@
-// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-/*
- * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
- */
-
 #include <linux/module.h>
 #include <linux/types.h>
 #include <linux/device.h>
@@ -319,7 +314,7 @@ static int aml_pxp_ql_remove(struct platform_device *pdev)
 
 static const struct of_device_id pxp_ql_dt_match[] = {
 	{
-		.compatible = "amlogic,pxp_ql",
+		.compatible = "xxx,pxp_ql",
 	},
 	{},
 };
