@@ -113,4 +113,4 @@ pxp_quick_load tool helps use pxp_quick_load driver more human friendly. For mor
 
 <center>List 2. usage description for pxp_quick_load driver</center>
 
-![image-20200609103701244](images\desc_of_pxp_ql_tool.png)
+![image-20200609103701244](images/desc_of_pxp_ql_tool.png)
