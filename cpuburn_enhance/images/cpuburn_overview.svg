@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 cpuburn_overview.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="11.7068in" height="7.00035in"
+		viewBox="0 0 842.892 504.025" xml:space="preserve" color-interpolation-filters="sRGB" class="st18">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false">
+		<v:userDefs>
+			<v:ud v:nameU="DisableSpdActionTags" v:prompt="" v:val="VT0(0):26"/>
+		</v:userDefs>
+	</v:documentProperties>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {visibility:visible}
+		.st2 {fill:#5b9bd5;fill-opacity:0.22;filter:url(#filter_2);stroke:#5b9bd5;stroke-opacity:0.22}
+		.st3 {fill:#dae2f3;stroke:#000000;stroke-width:0.25}
+		.st4 {fill:#4672c4;stroke:#c7c8c8;stroke-width:0.25}
+		.st5 {fill:none;stroke:none;stroke-width:0.25}
+		.st6 {fill:#000000;font-family:仿宋;font-size:0.833336em}
+		.st7 {fill:none;filter:url(#filter_2);stroke:#5b9bd5;stroke-opacity:0.22}
+		.st8 {stroke:#c7c8c8;stroke-width:0.25}
+		.st9 {fill:#f7cbac;stroke:#c7c8c8;stroke-width:0.25}
+		.st10 {font-size:1em}
+		.st11 {fill:#d8d8d8;stroke:#000000;stroke-width:0.25}
+		.st12 {fill:#000000;font-family:Calibri;font-size:0.833336em}
+		.st13 {fill:#ffd965;stroke:#c7c8c8;stroke-width:0.25}
+		.st14 {marker-end:url(#mrkr4-214);stroke:#000000;stroke-dasharray:7,5;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st15 {fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.28409090909091}
+		.st16 {marker-end:url(#mrkr4-223);stroke:#000000;stroke-dasharray:7,5;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st17 {fill:#000000;font-family:仿宋;font-size:0.833336em;font-weight:bold}
+		.st18 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend4">
+			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr4-214" class="st15" v:arrowType="4" v:arrowSize="2" v:setback="6.68" refX="-6.68" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-3.52,-3.52) "/>
+		</marker>
+		<marker id="mrkr4-223" class="st15" v:arrowType="4" v:arrowSize="2" v:setback="7.04" refX="-7.04" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend4" transform="scale(-3.52,-3.52) "/>
+		</marker>
+	</defs>
+	<defs id="Filters">
+		<filter id="filter_2">
+			<feGaussianBlur stdDeviation="2"/>
+		</filter>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="连接线" v:index="0"/>
+		<g id="group125-1" transform="translate(18.5009,-0.25)" v:mID="125" v:groupContext="group">
+			<title>工作表.125</title>
+			<g id="shape2-2" v:mID="2" v:groupContext="shape" transform="translate(286.771,-272.119)">
+				<title>正方形</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow2-3" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="273.771" width="230.254" height="230.254" class="st2"/>
+				</g>
+				<rect x="0" y="273.771" width="230.254" height="230.254" class="st3"/>
+			</g>
+			<g id="shape3-7" v:mID="3" v:groupContext="shape" transform="translate(312.936,-366.314)">
+				<title>正方形.3</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow3-8" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="446.461" width="57.5636" height="57.5636" class="st2"/>
+				</g>
+				<rect x="0" y="446.461" width="57.5636" height="57.5636" class="st4"/>
+			</g>
+			<g id="shape5-12" v:mID="5" v:groupContext="shape" transform="translate(301.517,-424.807)">
+				<title>工作表.5</title>
+				<desc>core 0</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="38.6781" cy="489.256" width="77.36" height="29.5377"/>
+				<rect x="0" y="474.487" width="77.3561" height="29.5377" class="st5"/>
+				<text x="23.68" y="492.26" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>core 0</text>			</g>
+			<g id="shape6-15" v:mID="6" v:groupContext="shape" transform="translate(425.97,-366.314)">
+				<title>正方形.6</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow6-16" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="446.461" width="57.5636" height="57.5636" class="st2"/>
+				</g>
+				<rect x="0" y="446.461" width="57.5636" height="57.5636" class="st4"/>
+			</g>
+			<g id="shape7-20" v:mID="7" v:groupContext="shape" transform="translate(414.551,-424.807)">
+				<title>工作表.7</title>
+				<desc>core 1</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="38.6781" cy="489.256" width="77.36" height="29.5377"/>
+				<rect x="0" y="474.487" width="77.3561" height="29.5377" class="st5"/>
+				<text x="23.68" y="492.26" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>core 1</text>			</g>
+			<g id="shape8-23" v:mID="8" v:groupContext="shape" transform="translate(478.824,-272.119)">
+				<title>工作表.8</title>
+				<desc>CPU</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="19.1006" cy="489.256" width="38.21" height="29.5377"/>
+				<rect x="0" y="474.487" width="38.2013" height="29.5377" class="st5"/>
+				<text x="11.6" y="492.26" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>CPU</text>			</g>
+			<g id="shape9-26" v:mID="9" v:groupContext="shape" transform="translate(236.534,-311.366)">
+				<title>右括号</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow9-27" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<path d="M0 504.03 A103.564 28.024 -180 0 0 38.68 487.28 L38.68 420.3 L77.36 420.3 L38.68 420.3 L38.68 353.31
+								 A103.564 28.024 -180 0 0 -0 336.57" class="st7"/>
+				</g>
+				<path d="M0 504.03 A103.564 28.024 -180 0 0 38.68 487.28 L38.68 420.3 L77.36 420.3 L38.68 420.3 L38.68 353.31 A103.564
+							 28.024 -180 0 0 -0 336.57" class="st8"/>
+			</g>
+			<g id="shape10-34" v:mID="10" v:groupContext="shape" transform="translate(73.2627,-422.336)">
+				<title>正方形.10</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow10-35" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape11-39" v:mID="11" v:groupContext="shape" transform="translate(94.1949,-422.336)">
+				<title>正方形.11</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow11-40" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape12-44" v:mID="12" v:groupContext="shape" transform="translate(115.127,-422.336)">
+				<title>正方形.12</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow12-45" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape13-49" v:mID="13" v:groupContext="shape" transform="translate(136.059,-422.336)">
+				<title>正方形.13</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow13-50" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape14-54" v:mID="14" v:groupContext="shape" transform="translate(156.992,-422.336)">
+				<title>正方形.14</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow14-55" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape15-59" v:mID="15" v:groupContext="shape" transform="translate(73.2627,-401.404)">
+				<title>正方形.15</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow15-60" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape16-64" v:mID="16" v:groupContext="shape" transform="translate(94.1949,-401.404)">
+				<title>正方形.16</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow16-65" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape17-69" v:mID="17" v:groupContext="shape" transform="translate(115.127,-401.404)">
+				<title>正方形.17</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow17-70" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape18-74" v:mID="18" v:groupContext="shape" transform="translate(136.059,-401.404)">
+				<title>正方形.18</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow18-75" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape19-79" v:mID="19" v:groupContext="shape" transform="translate(156.992,-401.404)">
+				<title>正方形.19</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow19-80" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape20-84" v:mID="20" v:groupContext="shape" transform="translate(73.2627,-380.472)">
+				<title>正方形.20</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow20-85" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape21-89" v:mID="21" v:groupContext="shape" transform="translate(94.1949,-380.472)">
+				<title>正方形.21</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow21-90" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape22-94" v:mID="22" v:groupContext="shape" transform="translate(115.127,-380.472)">
+				<title>正方形.22</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow22-95" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape23-99" v:mID="23" v:groupContext="shape" transform="translate(136.059,-380.472)">
+				<title>正方形.23</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow23-100" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape24-104" v:mID="24" v:groupContext="shape" transform="translate(156.992,-380.472)">
+				<title>正方形.24</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow24-105" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape25-109" v:mID="25" v:groupContext="shape" transform="translate(73.2627,-359.54)">
+				<title>正方形.25</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow25-110" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape26-114" v:mID="26" v:groupContext="shape" transform="translate(94.1949,-359.54)">
+				<title>正方形.26</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow26-115" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape27-119" v:mID="27" v:groupContext="shape" transform="translate(115.127,-359.54)">
+				<title>正方形.27</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow27-120" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape28-124" v:mID="28" v:groupContext="shape" transform="translate(136.059,-359.54)">
+				<title>正方形.28</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow28-125" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape29-129" v:mID="29" v:groupContext="shape" transform="translate(156.992,-359.54)">
+				<title>正方形.29</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow29-130" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape30-134" v:mID="30" v:groupContext="shape" transform="translate(177.924,-422.336)">
+				<title>正方形.30</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow30-135" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape31-139" v:mID="31" v:groupContext="shape" transform="translate(198.856,-422.336)">
+				<title>正方形.31</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow31-140" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape32-144" v:mID="32" v:groupContext="shape" transform="translate(219.788,-422.336)">
+				<title>正方形.32</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow32-145" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape33-149" v:mID="33" v:groupContext="shape" transform="translate(177.924,-401.404)">
+				<title>正方形.33</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow33-150" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape34-154" v:mID="34" v:groupContext="shape" transform="translate(198.856,-401.404)">
+				<title>正方形.34</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow34-155" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape35-159" v:mID="35" v:groupContext="shape" transform="translate(219.788,-401.404)">
+				<title>正方形.35</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow35-160" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape36-164" v:mID="36" v:groupContext="shape" transform="translate(177.924,-380.472)">
+				<title>正方形.36</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow36-165" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape37-169" v:mID="37" v:groupContext="shape" transform="translate(198.856,-380.472)">
+				<title>正方形.37</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow37-170" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape38-174" v:mID="38" v:groupContext="shape" transform="translate(219.788,-380.472)">
+				<title>正方形.38</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow38-175" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape39-179" v:mID="39" v:groupContext="shape" transform="translate(177.924,-359.54)">
+				<title>正方形.39</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow39-180" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape40-184" v:mID="40" v:groupContext="shape" transform="translate(198.856,-359.54)">
+				<title>正方形.40</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow40-185" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape41-189" v:mID="41" v:groupContext="shape" transform="translate(219.788,-359.54)">
+				<title>正方形.41</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow41-190" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape42-194" v:mID="42" v:groupContext="shape" transform="translate(73.2627,-310.291)">
+				<title>工作表.42</title>
+				<desc>V0~V31 128bit NEON registers</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="83.7288" cy="479.895" width="167.46" height="48.2604"/>
+				<rect x="0" y="455.765" width="167.458" height="48.2604" class="st5"/>
+				<text x="51.23" y="476.89" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>V0~V31 128bit <v:newlineChar/><tspan
+							x="48.73" dy="1.2em" class="st10">NEON registers</tspan></text>			</g>
+			<g id="shape55-198" v:mID="55" v:groupContext="shape" transform="translate(0,-158.852)">
+				<title>矩形</title>
+				<desc>cpuburn thread</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="183.157" cy="489.256" width="366.32" height="29.5377"/>
+				<g id="shadow55-199" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="474.487" width="366.314" height="29.5377" class="st2"/>
+				</g>
+				<rect x="0" y="474.487" width="366.314" height="29.5377" class="st11"/>
+				<text x="151.48" y="492.26" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>cpuburn thread</text>			</g>
+			<g id="shape56-204" v:mID="56" v:groupContext="shape" transform="translate(0,-50.2373)">
+				<title>矩形.56</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow56-205" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="395.178" width="366.314" height="108.847" class="st2"/>
+				</g>
+				<rect x="0" y="395.178" width="366.314" height="108.847" class="st13"/>
+			</g>
+			<g id="shape57-209" v:mID="57" v:groupContext="shape" v:layerMember="0" transform="translate(183.157,-188.39)">
+				<title>动态连接线</title>
+				<path d="M0 504.03 C0 493.4 13.29 493.4 24.52 493.4 C46.79 493.4 60.95 493.4 84 493.4 C113.41 493.4 157.29 493.4
+							 158.53 333.14 L158.54 332.78" class="st14"/>
+			</g>
+			<g id="shape58-215" v:mID="58" v:groupContext="shape" transform="translate(130.303,-215.485)">
+				<title>工作表.58</title>
+				<desc>绑定到cpu 0</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="47.6208" cy="489.256" width="95.25" height="29.5377"/>
+				<rect x="0" y="474.487" width="95.2415" height="29.5377" class="st5"/>
+				<text x="20.12" y="492.26" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>绑定到cpu 0</text>			</g>
+			<g id="shape71-218" v:mID="71" v:groupContext="shape" v:layerMember="0" transform="translate(6.39488E-014,-104.661)">
+				<title>动态连接线.71</title>
+				<path d="M0 504.03 L-10.63 504.03 L-10.63 569.08 L183.16 569.08 L183.16 565.49" class="st16"/>
+			</g>
+			<g id="shape72-224" v:mID="72" v:groupContext="shape" transform="translate(20.9322,-5.68434E-014)">
+				<title>工作表.72</title>
+				<desc>死循环</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="47.6208" cy="489.256" width="95.25" height="29.5377"/>
+				<rect x="0" y="474.487" width="95.2415" height="29.5377" class="st5"/>
+				<text x="32.62" y="492.26" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>死循环</text>			</g>
+			<g id="shape73-227" v:mID="73" v:groupContext="shape" transform="translate(3.51719E-013,-125.593)">
+				<title>工作表.73</title>
+				<desc>v8[0:31]=v8[0:31]+|v29[0:31]-v28[0:31]|</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="151.758" cy="489.256" width="303.52" height="29.5377"/>
+				<rect x="0" y="474.487" width="303.517" height="29.5377" class="st5"/>
+				<text x="53.49" y="492.26" class="st17" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>v8[0:31]=v8[0:31]+|v29[0:31]-v28[0:31]|</text>			</g>
+			<g id="shape74-230" v:mID="74" v:groupContext="shape" transform="translate(3.51719E-013,-54.1911)">
+				<title>工作表.74</title>
+				<desc>v8[96:127]=v8[96:127]+|v29[96:127]-v28[96:127]|</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="183.157" cy="489.256" width="366.32" height="29.5377"/>
+				<rect x="0" y="474.487" width="366.314" height="29.5377" class="st5"/>
+				<text x="64.74" y="492.26" class="st17" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>v8[96:127]=v8[96:127]+|v29[96:127]-v28[96:127]|  </text>			</g>
+			<g id="shape75-233" v:mID="75" v:groupContext="shape" transform="translate(6.39488E-014,-102.219)">
+				<title>工作表.75</title>
+				<desc>v8[32:63]=v8[32:63]+|v29[32:63]-v28[32:63]|</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="167.458" cy="489.256" width="334.92" height="29.5377"/>
+				<rect x="0" y="474.487" width="334.915" height="29.5377" class="st5"/>
+				<text x="59.12" y="492.26" class="st17" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>v8[<tspan
+							class="st10" v:langID="2052">32</tspan>:<tspan class="st10" v:langID="2052">63</tspan>]=v8[<tspan
+							class="st10" v:langID="2052">32</tspan>:<tspan class="st10" v:langID="2052">63</tspan>]+|v29[<tspan
+							class="st10" v:langID="2052">32</tspan>:<tspan class="st10" v:langID="2052">63</tspan>]-v28[<tspan
+							class="st10" v:langID="2052">32</tspan>:<tspan class="st10" v:langID="2052">63</tspan>]|</text>			</g>
+			<g id="shape76-244" v:mID="76" v:groupContext="shape" transform="translate(2.8777E-013,-79.4261)">
+				<title>工作表.76</title>
+				<desc>v8[64:95]=v8[64:95]+|v29[64:95]-v28[64:95]|</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="167.458" cy="489.256" width="334.92" height="29.5377"/>
+				<rect x="0" y="474.487" width="334.915" height="29.5377" class="st5"/>
+				<text x="59.12" y="492.26" class="st17" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>v8[<tspan
+							class="st10" v:langID="2052">64</tspan>:<tspan class="st10" v:langID="2052">95</tspan>]=v8[<tspan
+							class="st10" v:langID="2052">64</tspan>:<tspan class="st10" v:langID="2052">95</tspan>]+|v29[<tspan
+							class="st10" v:langID="2052">64</tspan>:<tspan class="st10" v:langID="2052">95</tspan>]-v28[<tspan
+							class="st10" v:langID="2052">64</tspan>:<tspan class="st10" v:langID="2052">95</tspan>]|</text>			</g>
+			<g id="shape77-255" v:mID="77" v:groupContext="shape" transform="translate(439.576,-158.852)">
+				<title>矩形.77</title>
+				<desc>cpuburn thread</desc>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="183.157" cy="489.256" width="366.32" height="29.5377"/>
+				<g id="shadow77-256" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="474.487" width="366.314" height="29.5377" class="st2"/>
+				</g>
+				<rect x="0" y="474.487" width="366.314" height="29.5377" class="st11"/>
+				<text x="151.48" y="492.26" class="st12" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>cpuburn thread</text>			</g>
+			<g id="shape78-261" v:mID="78" v:groupContext="shape" transform="translate(439.576,-50.2373)">
+				<title>矩形.78</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow78-262" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="395.178" width="366.314" height="108.847" class="st2"/>
+				</g>
+				<rect x="0" y="395.178" width="366.314" height="108.847" class="st13"/>
+			</g>
+			<g id="shape79-266" v:mID="79" v:groupContext="shape" v:layerMember="0" transform="translate(805.89,-104.661)">
+				<title>动态连接线.79</title>
+				<path d="M0 504.03 L10.63 504.03 L10.63 569.08 L-183.16 569.08 L-183.16 565.49" class="st16"/>
+			</g>
+			<g id="shape80-271" v:mID="80" v:groupContext="shape" transform="translate(668.784,-5.68434E-014)">
+				<title>工作表.80</title>
+				<desc>死循环</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="47.6208" cy="489.256" width="95.25" height="29.5377"/>
+				<rect x="0" y="474.487" width="95.2415" height="29.5377" class="st5"/>
+				<text x="32.62" y="492.26" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>死循环</text>			</g>
+			<g id="shape81-274" v:mID="81" v:groupContext="shape" transform="translate(439.576,-125.593)">
+				<title>工作表.81</title>
+				<desc>v8[0:31]=v8[0:31]+|v29[0:31]-v28[0:31]|</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="151.758" cy="489.256" width="303.52" height="29.5377"/>
+				<rect x="0" y="474.487" width="303.517" height="29.5377" class="st5"/>
+				<text x="53.49" y="492.26" class="st17" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>v8[0:31]=v8[0:31]+|v29[0:31]-v28[0:31]|</text>			</g>
+			<g id="shape82-277" v:mID="82" v:groupContext="shape" transform="translate(439.576,-54.1911)">
+				<title>工作表.82</title>
+				<desc>v8[96:127]=v8[96:127]+|v29[96:127]-v28[96:127]|</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="183.157" cy="489.256" width="366.32" height="29.5377"/>
+				<rect x="0" y="474.487" width="366.314" height="29.5377" class="st5"/>
+				<text x="64.74" y="492.26" class="st17" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>v8[96:127]=v8[96:127]+|v29[96:127]-v28[96:127]|  </text>			</g>
+			<g id="shape83-280" v:mID="83" v:groupContext="shape" transform="translate(439.576,-102.219)">
+				<title>工作表.83</title>
+				<desc>v8[32:63]=v8[32:63]+|v29[32:63]-v28[32:63]|</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="167.458" cy="489.256" width="334.92" height="29.5377"/>
+				<rect x="0" y="474.487" width="334.915" height="29.5377" class="st5"/>
+				<text x="59.12" y="492.26" class="st17" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>v8[<tspan
+							class="st10" v:langID="2052">32</tspan>:<tspan class="st10" v:langID="2052">63</tspan>]=v8[<tspan
+							class="st10" v:langID="2052">32</tspan>:<tspan class="st10" v:langID="2052">63</tspan>]+|v29[<tspan
+							class="st10" v:langID="2052">32</tspan>:<tspan class="st10" v:langID="2052">63</tspan>]-v28[<tspan
+							class="st10" v:langID="2052">32</tspan>:<tspan class="st10" v:langID="2052">63</tspan>]|</text>			</g>
+			<g id="shape84-291" v:mID="84" v:groupContext="shape" transform="translate(439.576,-79.4261)">
+				<title>工作表.84</title>
+				<desc>v8[64:95]=v8[64:95]+|v29[64:95]-v28[64:95]|</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="167.458" cy="489.256" width="334.92" height="29.5377"/>
+				<rect x="0" y="474.487" width="334.915" height="29.5377" class="st5"/>
+				<text x="59.12" y="492.26" class="st17" v:langID="1033"><v:paragraph v:horizAlign="1"/><v:tabList/>v8[<tspan
+							class="st10" v:langID="2052">64</tspan>:<tspan class="st10" v:langID="2052">95</tspan>]=v8[<tspan
+							class="st10" v:langID="2052">64</tspan>:<tspan class="st10" v:langID="2052">95</tspan>]+|v29[<tspan
+							class="st10" v:langID="2052">64</tspan>:<tspan class="st10" v:langID="2052">95</tspan>]-v28[<tspan
+							class="st10" v:langID="2052">64</tspan>:<tspan class="st10" v:langID="2052">95</tspan>]|</text>			</g>
+			<g id="shape86-302" v:mID="86" v:groupContext="shape" transform="translate(512.839,-215.485)">
+				<title>工作表.86</title>
+				<desc>绑定到cpu 1</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="47.6208" cy="489.256" width="95.25" height="29.5377"/>
+				<rect x="0" y="474.487" width="95.2415" height="29.5377" class="st5"/>
+				<text x="20.12" y="492.26" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>绑定到cpu 1</text>			</g>
+			<g id="shape87-305" v:mID="87" v:groupContext="shape" v:layerMember="0" transform="translate(622.733,-188.39)">
+				<title>动态连接线.87</title>
+				<path d="M0 504.03 C-0 493.4 -14.07 493.4 -26.01 493.4 C-49.69 493.4 -64.96 493.4 -90.07 493.4 C-120.93 493.4 -166.66
+							 493.4 -167.95 333.14 L-167.95 332.78" class="st14"/>
+			</g>
+			<g id="shape91-310" v:mID="91" v:groupContext="shape" transform="translate(565.169,-422.336)">
+				<title>正方形.91</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow91-311" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape92-315" v:mID="92" v:groupContext="shape" transform="translate(586.102,-422.336)">
+				<title>正方形.92</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow92-316" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape93-320" v:mID="93" v:groupContext="shape" transform="translate(607.034,-422.336)">
+				<title>正方形.93</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow93-321" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape94-325" v:mID="94" v:groupContext="shape" transform="translate(627.966,-422.336)">
+				<title>正方形.94</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow94-326" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape95-330" v:mID="95" v:groupContext="shape" transform="translate(648.898,-422.336)">
+				<title>正方形.95</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow95-331" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape96-335" v:mID="96" v:groupContext="shape" transform="translate(565.169,-401.404)">
+				<title>正方形.96</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow96-336" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape97-340" v:mID="97" v:groupContext="shape" transform="translate(586.102,-401.404)">
+				<title>正方形.97</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow97-341" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape98-345" v:mID="98" v:groupContext="shape" transform="translate(607.034,-401.404)">
+				<title>正方形.98</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow98-346" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape99-350" v:mID="99" v:groupContext="shape" transform="translate(627.966,-401.404)">
+				<title>正方形.99</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow99-351" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279" v:shadowType="1"
+						transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape100-355" v:mID="100" v:groupContext="shape" transform="translate(648.898,-401.404)">
+				<title>正方形.100</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow100-356" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape101-360" v:mID="101" v:groupContext="shape" transform="translate(565.169,-380.472)">
+				<title>正方形.101</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow101-361" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape102-365" v:mID="102" v:groupContext="shape" transform="translate(586.102,-380.472)">
+				<title>正方形.102</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow102-366" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape103-370" v:mID="103" v:groupContext="shape" transform="translate(607.034,-380.472)">
+				<title>正方形.103</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow103-371" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape104-375" v:mID="104" v:groupContext="shape" transform="translate(627.966,-380.472)">
+				<title>正方形.104</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow104-376" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape105-380" v:mID="105" v:groupContext="shape" transform="translate(648.898,-380.472)">
+				<title>正方形.105</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow105-381" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape106-385" v:mID="106" v:groupContext="shape" transform="translate(565.169,-359.54)">
+				<title>正方形.106</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow106-386" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape107-390" v:mID="107" v:groupContext="shape" transform="translate(586.102,-359.54)">
+				<title>正方形.107</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow107-391" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape108-395" v:mID="108" v:groupContext="shape" transform="translate(607.034,-359.54)">
+				<title>正方形.108</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow108-396" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape109-400" v:mID="109" v:groupContext="shape" transform="translate(627.966,-359.54)">
+				<title>正方形.109</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow109-401" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape110-405" v:mID="110" v:groupContext="shape" transform="translate(648.898,-359.54)">
+				<title>正方形.110</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow110-406" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape111-410" v:mID="111" v:groupContext="shape" transform="translate(669.83,-422.336)">
+				<title>正方形.111</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow111-411" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape112-415" v:mID="112" v:groupContext="shape" transform="translate(690.763,-422.336)">
+				<title>正方形.112</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow112-416" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape113-420" v:mID="113" v:groupContext="shape" transform="translate(711.695,-422.336)">
+				<title>正方形.113</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow113-421" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape114-425" v:mID="114" v:groupContext="shape" transform="translate(669.83,-401.404)">
+				<title>正方形.114</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow114-426" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape115-430" v:mID="115" v:groupContext="shape" transform="translate(690.763,-401.404)">
+				<title>正方形.115</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow115-431" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape116-435" v:mID="116" v:groupContext="shape" transform="translate(711.695,-401.404)">
+				<title>正方形.116</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow116-436" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape117-440" v:mID="117" v:groupContext="shape" transform="translate(669.83,-380.472)">
+				<title>正方形.117</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow117-441" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape118-445" v:mID="118" v:groupContext="shape" transform="translate(690.763,-380.472)">
+				<title>正方形.118</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow118-446" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape119-450" v:mID="119" v:groupContext="shape" transform="translate(711.695,-380.472)">
+				<title>正方形.119</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow119-451" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape120-455" v:mID="120" v:groupContext="shape" transform="translate(669.83,-359.54)">
+				<title>正方形.120</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow120-456" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape121-460" v:mID="121" v:groupContext="shape" transform="translate(690.763,-359.54)">
+				<title>正方形.121</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow121-461" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape122-465" v:mID="122" v:groupContext="shape" transform="translate(711.695,-359.54)">
+				<title>正方形.122</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow122-466" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st2"/>
+				</g>
+				<rect x="0" y="483.093" width="20.9322" height="20.9322" class="st9"/>
+			</g>
+			<g id="shape123-470" v:mID="123" v:groupContext="shape" transform="translate(565.169,-310.291)">
+				<title>工作表.123</title>
+				<desc>V0~V31 128bit NEON registers</desc>
+				<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+				<v:textRect cx="83.7288" cy="479.895" width="167.46" height="48.2604"/>
+				<rect x="0" y="455.765" width="167.458" height="48.2604" class="st5"/>
+				<text x="51.23" y="476.89" class="st6" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>V0~V31 128bit <v:newlineChar/><tspan
+							x="48.73" dy="1.2em" class="st10">NEON registers</tspan></text>			</g>
+			<g id="shape124-474" v:mID="124" v:groupContext="shape" transform="translate(482.697,-311.366)">
+				<title>左括号</title>
+				<v:userDefs>
+					<v:ud v:nameU="visVersion" v:prompt="" v:val="VT0(15):26"/>
+				</v:userDefs>
+				<g id="shadow124-475" v:groupContext="shadow" v:shadowOffsetX="0.345598" v:shadowOffsetY="-1.97279"
+						v:shadowType="1" transform="matrix(1,0,0,1,0.345598,1.97279)" class="st1">
+					<path d="M95.24 504.03 A127.509 28.024 0 0 1 47.62 487.28 L47.62 420.3 L0 420.3 L47.62 420.3 L47.62 353.31 A127.509
+								 28.024 0 0 1 95.24 336.57" class="st7"/>
+				</g>
+				<path d="M95.24 504.03 A127.509 28.024 0 0 1 47.62 487.28 L47.62 420.3 L0 420.3 L47.62 420.3 L47.62 353.31 A127.509
+							 28.024 0 0 1 95.24 336.57" class="st8"/>
+			</g>
+		</g>
+	</g>
+</svg>
