@@ -38,11 +38,11 @@ cpuburn是一个可以让所有CPU核的使用率达到100%的压力测试工具
 
 在图P4 && P5中，我们给出了cpuburn以100us on && 100 off周期性运行时的结果
 
-![image-20200612135925270](images/demo_100us_on_off.png)
+<div align="center"><img src="images/demo_100us_on_off.png"></div>
 
 <p align="center">P4 cpuburn demon 100us on/off -- ops</p>
 
-![demo 100us](images/demo_100us.png)
+<div align="center"><img src="images/demo_100us.png"></div>
 <p align="center">P5 cpuburn demon 100us on/off -- voltage overshoot and dropshoot</p>
 
 
