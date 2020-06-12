@@ -1,0 +1,7 @@
+menu "cpuburn driver"
+	config XXX_CPUBURN
+		tristate "cpuburn"
+		default n
+	help
+	cpuburn
+endmenu
