@@ -18,3 +18,8 @@ cpuburn是一个可以让所有CPU核的使用率达到100%的压力测试工具
 <p align="center">P2 cpuburn improve overview</p>
 
 如P2所示，这里将原始的CPUBURN移植到内核中运行，在保留原always on运行模式的基础上，利用高精度定时器hrtimer来支持最高达到100us精度的cpuburn负载空载切换。
+
+# 运行效果
+
+![demo 100us](images/demo_100us.png)
+
