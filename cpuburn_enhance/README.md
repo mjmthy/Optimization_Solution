@@ -21,7 +21,7 @@ cpuburn是一个可以让所有CPU核的使用率达到100%的压力测试工具
 
 # 使用改进后的CPUBURN
 
-![cpuburn op nodes](images/cpuburn_op_nodes.png)
+<div style="text-align: center"><img src="images/cpuburn_op_nodes.png"></div>
 <p align="center">P3 cpuburn operations nodes</p>
 
 如P3所示，改进后的cpuburn以sys节点（/sys/class/cpuburn下）的方式提供给用户操作。每个操作节点的功能如表L1所示。
