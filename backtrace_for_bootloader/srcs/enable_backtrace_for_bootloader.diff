@@ -1,0 +1,305 @@
+diff --git a/arch/arm/cpu/armv8/u-boot.lds b/arch/arm/cpu/armv8/u-boot.lds
+index 953a1a9..27893b3 100644
+--- a/arch/arm/cpu/armv8/u-boot.lds
++++ b/arch/arm/cpu/armv8/u-boot.lds
+@@ -24,6 +24,10 @@
+ 	}
+ 
+ 	. = ALIGN(8);
++	.__rodata_start :
++	{
++		*(.__rodata_start)
++	}
+ 	.rodata : { *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.rodata*))) }
+ 
+ 	. = ALIGN(8);
+diff --git a/arch/arm/cpu/u-boot-spl.lds b/arch/arm/cpu/u-boot-spl.lds
+index a8be204..028fc79 100644
+--- a/arch/arm/cpu/u-boot-spl.lds
++++ b/arch/arm/cpu/u-boot-spl.lds
+@@ -24,6 +24,7 @@
+ 	}
+ 
+ 	. = ALIGN(4);
++	__rodata_start = .;
+ 	.rodata : { *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.rodata*))) }
+ 
+ 	. = ALIGN(4);
+diff --git a/arch/arm/include/asm/proc-armv/ptrace.h b/arch/arm/include/asm/proc-armv/ptrace.h
+index 71df5a9..84ef635 100644
+--- a/arch/arm/include/asm/proc-armv/ptrace.h
++++ b/arch/arm/include/asm/proc-armv/ptrace.h
+@@ -25,6 +25,12 @@
+ 	unsigned long regs[31];
+ };
+ 
++struct stackframe {
++	unsigned long fp;
++	unsigned long sp;
++	unsigned long pc;
++};
++
+ #endif	/* __ASSEMBLY__ */
+ 
+ #else	/* CONFIG_ARM64 */
+diff --git a/arch/arm/lib/Makefile b/arch/arm/lib/Makefile
+index d74e4b8..abfffad 100644
+--- a/arch/arm/lib/Makefile
++++ b/arch/arm/lib/Makefile
+@@ -38,6 +38,7 @@
+ ifdef CONFIG_ARM64
+ obj-y	+= gic_64.o
+ obj-y	+= interrupts_64.o
++obj-$(CONFIG_KALLSYMS) += stacktrace_64.o
+ else
+ obj-y	+= interrupts.o
+ endif
+diff --git a/arch/arm/lib/interrupts_64.c b/arch/arm/lib/interrupts_64.c
+index b476722..ab219c3 100644
+--- a/arch/arm/lib/interrupts_64.c
++++ b/arch/arm/lib/interrupts_64.c
+@@ -7,7 +7,9 @@
+ 
+ #include <common.h>
+ #include <linux/compiler.h>
+-
++#ifdef CONFIG_KALLSYMS
++#include "stacktrace_64.h"
++#endif
+ 
+ int interrupt_init(void)
+ {
+@@ -33,6 +35,11 @@
+ 	for (i = 0; i < 29; i += 2)
+ 		printf("x%-2d: %016lx x%-2d: %016lx\n",
+ 		       i, regs->regs[i], i+1, regs->regs[i+1]);
++#ifdef CONFIG_KALLSYMS
++	dump_backtrace(regs);
++#else
++	printf("\n\n !!! enable CONFIG_KALLSYMS to show call trace !!!\n");
++#endif
+ 	printf("\n");
+ }
+ 
+@@ -76,6 +83,7 @@
+ 	panic("Resetting CPU ...\n");
+ }
+ 
++
+ /*
+  * do_sync handles the Synchronous Abort exception.
+  */
+diff --git a/arch/arm/lib/sections.c b/arch/arm/lib/sections.c
+index a1205c3..adb13a4 100644
+--- a/arch/arm/lib/sections.c
++++ b/arch/arm/lib/sections.c
+@@ -19,9 +19,11 @@
+  * aliasing warnings.
+  */
+ 
++
+ char __bss_start[0] __attribute__((section(".__bss_start")));
+ char __bss_end[0] __attribute__((section(".__bss_end")));
+ char __image_copy_start[0] __attribute__((section(".__image_copy_start")));
++char __rodata_start[0] __attribute__((section(".__rodata_start")));
+ char __image_copy_end[0] __attribute__((section(".__image_copy_end")));
+ char __rel_dyn_start[0] __attribute__((section(".__rel_dyn_start")));
+ char __rel_dyn_end[0] __attribute__((section(".__rel_dyn_end")));
+diff --git a/arch/arm/lib/stacktrace_64.c b/arch/arm/lib/stacktrace_64.c
+new file mode 100644
+index 0000000..1ff1fd4
+--- /dev/null
++++ b/arch/arm/lib/stacktrace_64.c
+@@ -0,0 +1,85 @@
++#include <common.h>
++#include <linux/compiler.h>
++
++DECLARE_GLOBAL_DATA_PTR;
++
++static void print_symbol(unsigned long addr, unsigned long offset)
++{
++	const char *sym;
++	unsigned long base;
++	unsigned long end;
++	unsigned long size;
++	unsigned long faddr = addr - offset;
++
++	sym = symbol_lookup(faddr, &base, &end);
++	if (sym) {
++		size = end - base;
++		printf("[<%016lx>]%s+0x%lx/0x%lx\n", addr, sym, addr-(base+offset), size);
++	} else {
++		printf("[<%016lx>]%s\n", addr, "N/A");
++	}
++}
++
++static int unwind_frame(struct stackframe *frame)
++{
++	unsigned long fp = frame->fp;
++	unsigned long stack_high;
++	unsigned long stack_low;
++
++	stack_low = frame->sp;
++	stack_high = gd->start_addr_sp;
++	frame->fp = *(unsigned long *)(fp);
++
++	if (frame->fp < stack_low || fp > stack_high - 0x10)
++		return -1;
++
++	frame->sp = fp + 0x10;
++	/*
++	 * -4 here because we care about the PC not
++	 * where the return will go
++	 */
++	frame->pc = *(unsigned long *)(fp+8) - 4;
++
++	return 0;
++}
++
++int dump_backtrace(struct pt_regs *regs)
++{
++	struct stackframe frame;
++	unsigned long offset;
++	const register unsigned long current_sp asm ("sp");
++	int ret;
++
++	offset = gd->reloc_off;
++	memset(&frame, 0x00, sizeof(frame));
++	if (regs) {
++		frame.fp = regs->regs[29];
++		frame.sp = regs->regs[31];
++		frame.pc = regs->elr;
++	} else {
++		frame.fp = (unsigned long)__builtin_frame_address(0);
++		/*
++		 * +0x10 to reach the real bottom of
++		 * the curent frame
++		 */
++		frame.sp = current_sp + 0x10;
++		frame.pc = (unsigned long)dump_backtrace;
++	}
++
++	printf("\nCall trace: \n");
++	while (1) {
++		unsigned long where = frame.pc;
++		print_symbol(where, offset);
++
++		ret = unwind_frame(&frame);
++		if (ret < 0)
++			break;
++	}
++
++	return 0;
++}
++
++void stack_dump(void)
++{
++	dump_backtrace(NULL);
++}
+diff --git a/arch/arm/lib/stacktrace_64.h b/arch/arm/lib/stacktrace_64.h
+new file mode 100644
+index 0000000..e98a593
+--- /dev/null
++++ b/arch/arm/lib/stacktrace_64.h
+@@ -0,0 +1,8 @@
++#ifndef _STACKTRACE_64_H_
++#define _STACKTRACE_64_H_
++
++#include <common.h>
++
++int dump_backtrace(struct pt_regs *regs);
++
++#endif
+ 
+diff --git a/common/kallsyms.c b/common/kallsyms.c
+index ce42a93..104b378 100644
+--- a/common/kallsyms.c
++++ b/common/kallsyms.c
+@@ -6,6 +6,9 @@
+  */
+ 
+ #include <common.h>
++#include <asm/sections.h>
++
++DECLARE_GLOBAL_DATA_PTR;
+ 
+ /* We need the weak marking as this symbol is provided specially */
+ extern const char system_map[] __attribute__((weak));
+@@ -20,25 +23,44 @@
+  *		base = 0x03fb9b7c;
+  *		sym = "_spi_cs_deactivate";
+  */
+-const char *symbol_lookup(unsigned long addr, unsigned long *caddr)
++const char *symbol_lookup(unsigned long addr, unsigned long *caddr, unsigned long *naddr)
+ {
+ 	const char *sym, *csym;
+-	char *esym;
+ 	unsigned long sym_addr;
++	char sym_addr_tmp[16] = {0};
++	unsigned long text_start;
++	unsigned long text_end;
+ 
+ 	sym = system_map;
+ 	csym = NULL;
+ 	*caddr = 0;
++	*naddr = 0;
++	text_start = (ulong)&__image_copy_start - gd->reloc_off;
++	text_end = (ulong)&__rodata_start - gd->reloc_off;
++
++	/*
++	 * within text section?
++	 */
++	if (addr < text_start || addr > text_end)
++		return NULL;
+ 
+ 	while (*sym) {
+-		sym_addr = simple_strtoul(sym, &esym, 16);
+-		sym = esym;
+-		if (sym_addr > addr)
++		memcpy(sym_addr_tmp, sym, 16);
++		sym_addr = simple_strtoul(sym_addr_tmp, NULL, 16);
++		sym = sym+16;
++		if (sym_addr > addr) {
++			*naddr = sym_addr;
+ 			break;
++		}
+ 		*caddr = sym_addr;
+ 		csym = sym;
+ 		sym += strlen(sym) + 1;
+ 	}
++	/*
++	 * the last symbol?
++	 */
++	if (*sym == 0x00)
++		*naddr = text_end;
+ 
+ 	return csym;
+ }
+diff --git a/include/asm-generic/sections.h b/include/asm-generic/sections.h
+index 458952f..fb5f454 100644
+--- a/include/asm-generic/sections.h
++++ b/include/asm-generic/sections.h
+@@ -70,6 +70,7 @@
+ extern char __bss_start[];
+ extern char __bss_end[];
+ extern char __image_copy_start[];
++extern char __rodata_start[];
+ extern char __image_copy_end[];
+ extern char __rel_dyn_start[];
+ extern char __rel_dyn_end[];
+diff --git a/include/common.h b/include/common.h
+index 85e6e4f..9046fb7 100644
+--- a/include/common.h
++++ b/include/common.h
+@@ -395,7 +395,10 @@
+ void	jumptable_init(void);
+ 
+ /* common/kallsysm.c */
+-const char *symbol_lookup(unsigned long addr, unsigned long *caddr);
++const char *symbol_lookup(unsigned long addr, unsigned long *caddr, unsigned long *naddr);
++
++/* arch/arm/lib/stacktrace_64.c */
++void stack_dump(void);
+ 
+ /* api/api.c */
+ void	api_init (void);
