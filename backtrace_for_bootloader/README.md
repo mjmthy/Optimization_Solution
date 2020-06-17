@@ -50,3 +50,27 @@ const char *symbol_lookup(unsigned long addr, unsigned long *caddr, unsigned lon
 如图P3所示就是ARMv8 AARCH64模式下的栈帧结构，每次调用子函数(非inline的情况下)之前，就会由调用者负责创建将本函数中的下一条指令地址以及本函数的栈帧起始地址压入栈中，同时将当前的SP存入FP寄存器中。由此，很容易通过递归的方法定位到每一级调用中执行的指令地址。
 
 完整的代码实现见srcs目录
+
+
+
+# 功能验证
+
+实现的bootloader下堆栈打印，支持主动打印堆栈和异常时被动打印堆栈两种场景
+
+## 主动打印堆栈
+
+在代码中可以直接调用stack_dump打印堆栈，适用于了解代码调用路径
+
+<div align="center"><img src="images/stack_dump.png"></div>
+<p align="center">P4. 主动打印堆栈</p>
+
+如图P4中显示的就是在version命令中调用stack_dump的效果
+
+## 异常时堆栈打印
+
+在bootloader运行过程中发生异常时，会打印堆栈信息
+
+<div align="center"><img src="images/exception_stack_dump.png"></div>
+<p align="center">P5. 异常时打印堆栈</p>
+
+如图P5就是在fdt命令路径中读取0x2C地址内容触发异常后的效果
