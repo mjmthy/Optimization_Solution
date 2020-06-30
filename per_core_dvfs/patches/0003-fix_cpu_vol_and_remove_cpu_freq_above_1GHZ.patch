@@ -1,0 +1,103 @@
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
+index 8dd56d3581b9..f03e35af28c9 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
+@@ -581,61 +581,26 @@
+ 
+ 		opp-100000000 {
+ 			opp-hz = /bits/ 64 <100000000>;
+-			opp-microvolt = <760000>;
++			opp-microvolt = <970000>;
+ 		};
+ 
+ 		opp-250000000 {
+ 			opp-hz = /bits/ 64 <250000000>;
+-			opp-microvolt = <760000>;
++			opp-microvolt = <970000>;
+ 		};
+ 
+ 		opp-500000000 {
+ 			opp-hz = /bits/ 64 <500000000>;
+-			opp-microvolt = <760000>;
++			opp-microvolt = <970000>;
+ 		};
+ 
+ 		opp-667000000 {
+ 			opp-hz = /bits/ 64 <666666666>;
+-			opp-microvolt = <780000>;
++			opp-microvolt = <970000>;
+ 		};
+ 
+ 		opp-1000000000 {
+ 			opp-hz = /bits/ 64 <1000000000>;
+-			opp-microvolt = <800000>;
+-		};
+-
+-		opp-1200000000 {
+-			opp-hz = /bits/ 64 <1200000000>;
+-			opp-microvolt = <810000>;
+-		};
+-
+-		opp-1404000000 {
+-			opp-hz = /bits/ 64 <1404000000>;
+-			opp-microvolt = <820000>;
+-		};
+-
+-		opp-1512000000 {
+-			opp-hz = /bits/ 64 <1500000000>;
+-			opp-microvolt = <830000>;
+-		};
+-
+-		opp-1608000000 {
+-			opp-hz = /bits/ 64 <1608000000>;
+-			opp-microvolt = <860000>;
+-		};
+-
+-		opp-1704000000 {
+-			opp-hz = /bits/ 64 <1704000000>;
+-			opp-microvolt = <900000>;
+-		};
+-
+-		opp-1800000000 {
+-			opp-hz = /bits/ 64 <1800000000>;
+-			opp-microvolt = <940000>;
+-		};
+-
+-		opp-1908000000 {
+-			opp-hz = /bits/ 64 <1908000000>;
+ 			opp-microvolt = <970000>;
+ 		};
+ 	};
+@@ -799,8 +764,8 @@
+ &cpu1 {
+ 	cpu-supply = <&vddcpu>;
+ 	operating-points-v2 = <&cpu_opp_table>;
+-	clocks = <&clkc CLKID_CPU_CLK>,
+-	       <&clkc CLKID_CPU_CLK_DYN>,
++	clocks = <&clkc CLKID_CPU1_CLK>,
++	       <&clkc CLKID_CPU1_CLK_DYN>,
+ 	       <&clkc CLKID_SYS_PLL>,
+ 	       <&clkc CLKID_DSU_CLK>,
+ 	       <&clkc CLKID_DSU_CLK_FINAL>;
+@@ -815,8 +780,8 @@
+ &cpu2 {
+ 	cpu-supply = <&vddcpu>;
+ 	operating-points-v2 = <&cpu_opp_table>;
+-	clocks = <&clkc CLKID_CPU_CLK>,
+-	       <&clkc CLKID_CPU_CLK_DYN>,
++	clocks = <&clkc CLKID_CPU2_CLK>,
++	       <&clkc CLKID_CPU2_CLK_DYN>,
+ 	       <&clkc CLKID_SYS_PLL>,
+ 	       <&clkc CLKID_DSU_CLK>,
+ 	       <&clkc CLKID_DSU_CLK_FINAL>;
+@@ -831,8 +796,8 @@
+ &cpu3 {
+ 	cpu-supply = <&vddcpu>;
+ 	operating-points-v2 = <&cpu_opp_table>;
+-	clocks = <&clkc CLKID_CPU_CLK>,
+-	       <&clkc CLKID_CPU_CLK_DYN>,
++	clocks = <&clkc CLKID_CPU3_CLK>,
++	       <&clkc CLKID_CPU3_CLK_DYN>,
+ 	       <&clkc CLKID_SYS_PLL>,
+ 	       <&clkc CLKID_DSU_CLK>,
+ 	       <&clkc CLKID_DSU_CLK_FINAL>;

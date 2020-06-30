@@ -1,0 +1,643 @@
+diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
+index 2840bcdf8f8c..293d9280b1bd 100644
+--- a/drivers/clk/meson/g12a.c
++++ b/drivers/clk/meson/g12a.c
+@@ -921,24 +921,341 @@ static struct clk_regmap sm1_dsu_final_clk = {
+ 	},
+ };
+ 
++static struct clk_regmap sm1_cpu1_clk_premux0 = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL2,
++		.mask = 0x3,
++		.shift = 0,
++		.flags = CLK_MUX_ROUND_CLOSEST,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu1_clk_dyn0_sel",
++		.ops = &clk_regmap_mux_ops,
++		.parent_data = (const struct clk_parent_data []) {
++			{ .fw_name = "xtal", },
++			{ .hw = &g12a_fclk_div2.hw },
++			{ .hw = &g12a_fclk_div3.hw },
++		},
++		.num_parents = 3,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu1_clk_mux0_div = {
++	.data = &(struct meson_clk_cpu_dyndiv_data){
++		.div = {
++			.reg_off = HHI_SYS_CPU_CLK_CNTL2,
++			.shift = 4,
++			.width = 6,
++		},
++		.dyn = {
++			.reg_off = HHI_SYS_CPU_CLK_CNTL2,
++			.shift = 26,
++			.width = 1,
++		},
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu1_clk_dyn0_div",
++		.ops = &meson_clk_cpu_dyndiv_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu1_clk_premux0.hw
++		},
++		.num_parents = 1,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu1_clk_postmux0 = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL2,
++		.mask = 0x1,
++		.shift = 2,
++		.flags = CLK_MUX_ROUND_CLOSEST,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu1_clk_dyn0",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu1_clk_premux0.hw,
++			&sm1_cpu1_clk_mux0_div.hw,
++		},
++		.num_parents = 2,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu1_clk_premux1 = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL2,
++		.mask = 0x3,
++		.shift = 16,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu1_clk_dyn1_sel",
++		.ops = &clk_regmap_mux_ops,
++		.parent_data = (const struct clk_parent_data []) {
++			{ .fw_name = "xtal", },
++			{ .hw = &g12a_fclk_div2.hw },
++			{ .hw = &g12a_fclk_div3.hw },
++		},
++		.num_parents = 3,
++		/* This sub-tree is used a parking clock */
++		.flags = CLK_SET_RATE_NO_REPARENT
++	},
++};
++
++static struct clk_regmap sm1_cpu1_clk_mux1_div = {
++	.data = &(struct clk_regmap_div_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL2,
++		.shift = 20,
++		.width = 6,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu1_clk_dyn1_div",
++		.ops = &clk_regmap_divider_ro_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu1_clk_premux1.hw
++		},
++		.num_parents = 1,
++	},
++};
++
++static struct clk_regmap sm1_cpu1_clk_postmux1 = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL2,
++		.mask = 0x1,
++		.shift = 18,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu1_clk_dyn1",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu1_clk_premux1.hw,
++			&sm1_cpu1_clk_mux1_div.hw,
++		},
++		.num_parents = 2,
++		/* This sub-tree is used a parking clock */
++		.flags = CLK_SET_RATE_NO_REPARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu1_clk_dyn = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL2,
++		.mask = 0x1,
++		.shift = 10,
++		.flags = CLK_MUX_ROUND_CLOSEST,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu1_clk_dyn",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu1_clk_postmux0.hw,
++			&sm1_cpu1_clk_postmux1.hw,
++		},
++		.num_parents = 2,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu1_clk_pre = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL2,
++		.mask = 0x1,
++		.shift = 11,
++		.flags = CLK_MUX_ROUND_CLOSEST,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu1_clk_pre",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu1_clk_dyn.hw,
++			&g12a_sys_pll.hw,
++		},
++		.num_parents = 2,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++//static u32 mux_table_sm1_cpu1[] = { 1 };
+ /* Datasheet names this field as "Cpu_clk_sync_mux_sel" bit 0 */
+ static struct clk_regmap sm1_cpu1_clk = {
+ 	.data = &(struct clk_regmap_mux_data){
+ 		.offset = HHI_SYS_CPU_CLK_CNTL6,
+ 		.mask = 0x1,
+ 		.shift = 24,
++		//.table = mux_table_sm1_cpu1,
+ 	},
+ 	.hw.init = &(struct clk_init_data){
+ 		.name = "cpu1_clk",
+-		.ops = &clk_regmap_mux_ro_ops,
++		.ops = &clk_regmap_mux_ops,
+ 		.parent_hws = (const struct clk_hw *[]) {
+-			&g12a_cpu_clk.hw,
++			//&g12a_cpu_clk.hw,
+ 			/* This CPU also have a dedicated clock tree */
++			&sm1_cpu1_clk_pre.hw,
++		},
++		.num_parents = 1,
++		.flags = CLK_SET_RATE_PARENT | CLK_SET_RATE_NO_REPARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu2_clk_premux0 = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL3,
++		.mask = 0x3,
++		.shift = 0,
++		.flags = CLK_MUX_ROUND_CLOSEST,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu2_clk_dyn0_sel",
++		.ops = &clk_regmap_mux_ops,
++		.parent_data = (const struct clk_parent_data []) {
++			{ .fw_name = "xtal", },
++			{ .hw = &g12a_fclk_div2.hw },
++			{ .hw = &g12a_fclk_div3.hw },
++		},
++		.num_parents = 3,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu2_clk_mux0_div = {
++	.data = &(struct meson_clk_cpu_dyndiv_data){
++		.div = {
++			.reg_off = HHI_SYS_CPU_CLK_CNTL3,
++			.shift = 4,
++			.width = 6,
++		},
++		.dyn = {
++			.reg_off = HHI_SYS_CPU_CLK_CNTL3,
++			.shift = 26,
++			.width = 1,
++		},
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu2_clk_dyn0_div",
++		.ops = &meson_clk_cpu_dyndiv_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu2_clk_premux0.hw
++		},
++		.num_parents = 1,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu2_clk_postmux0 = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL3,
++		.mask = 0x1,
++		.shift = 2,
++		.flags = CLK_MUX_ROUND_CLOSEST,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu2_clk_dyn0",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu2_clk_premux0.hw,
++			&sm1_cpu2_clk_mux0_div.hw,
++		},
++		.num_parents = 2,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu2_clk_premux1 = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL3,
++		.mask = 0x3,
++		.shift = 16,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu2_clk_dyn1_sel",
++		.ops = &clk_regmap_mux_ops,
++		.parent_data = (const struct clk_parent_data []) {
++			{ .fw_name = "xtal", },
++			{ .hw = &g12a_fclk_div2.hw },
++			{ .hw = &g12a_fclk_div3.hw },
++		},
++		.num_parents = 3,
++		/* This sub-tree is used a parking clock */
++		.flags = CLK_SET_RATE_NO_REPARENT
++	},
++};
++
++static struct clk_regmap sm1_cpu2_clk_mux1_div = {
++	.data = &(struct clk_regmap_div_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL3,
++		.shift = 20,
++		.width = 6,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu2_clk_dyn1_div",
++		.ops = &clk_regmap_divider_ro_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu2_clk_premux1.hw
+ 		},
+ 		.num_parents = 1,
+ 	},
+ };
+ 
++static struct clk_regmap sm1_cpu2_clk_postmux1 = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL3,
++		.mask = 0x1,
++		.shift = 18,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu2_clk_dyn1",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu2_clk_premux1.hw,
++			&sm1_cpu2_clk_mux1_div.hw,
++		},
++		.num_parents = 2,
++		/* This sub-tree is used a parking clock */
++		.flags = CLK_SET_RATE_NO_REPARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu2_clk_dyn = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL3,
++		.mask = 0x1,
++		.shift = 10,
++		.flags = CLK_MUX_ROUND_CLOSEST,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu2_clk_dyn",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu2_clk_postmux0.hw,
++			&sm1_cpu2_clk_postmux1.hw,
++		},
++		.num_parents = 2,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu2_clk_pre = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL3,
++		.mask = 0x1,
++		.shift = 11,
++		.flags = CLK_MUX_ROUND_CLOSEST,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu2_clk_pre",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu2_clk_dyn.hw,
++			&g12a_sys_pll.hw,
++		},
++		.num_parents = 2,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++//static u32 mux_table_sm1_cpu2[] = { 1 };
+ /* Datasheet names this field as "Cpu_clk_sync_mux_sel" bit 1 */
+ static struct clk_regmap sm1_cpu2_clk = {
+ 	.data = &(struct clk_regmap_mux_data){
+@@ -948,15 +1265,174 @@ static struct clk_regmap sm1_cpu2_clk = {
+ 	},
+ 	.hw.init = &(struct clk_init_data){
+ 		.name = "cpu2_clk",
+-		.ops = &clk_regmap_mux_ro_ops,
++		.ops = &clk_regmap_mux_ops,
+ 		.parent_hws = (const struct clk_hw *[]) {
+-			&g12a_cpu_clk.hw,
++			//&g12a_cpu_clk.hw,
+ 			/* This CPU also have a dedicated clock tree */
++			&sm1_cpu2_clk_pre.hw,
+ 		},
+ 		.num_parents = 1,
++		.flags = CLK_SET_RATE_PARENT | CLK_SET_RATE_NO_REPARENT,
+ 	},
+ };
+ 
++static struct clk_regmap sm1_cpu3_clk_premux0 = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL4,
++		.mask = 0x3,
++		.shift = 0,
++		.flags = CLK_MUX_ROUND_CLOSEST,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu3_clk_dyn0_sel",
++		.ops = &clk_regmap_mux_ops,
++		.parent_data = (const struct clk_parent_data []) {
++			{ .fw_name = "xtal", },
++			{ .hw = &g12a_fclk_div2.hw },
++			{ .hw = &g12a_fclk_div3.hw },
++		},
++		.num_parents = 3,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu3_clk_mux0_div = {
++	.data = &(struct meson_clk_cpu_dyndiv_data){
++		.div = {
++			.reg_off = HHI_SYS_CPU_CLK_CNTL4,
++			.shift = 4,
++			.width = 6,
++		},
++		.dyn = {
++			.reg_off = HHI_SYS_CPU_CLK_CNTL4,
++			.shift = 26,
++			.width = 1,
++		},
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu3_clk_dyn0_div",
++		.ops = &meson_clk_cpu_dyndiv_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu3_clk_premux0.hw
++		},
++		.num_parents = 1,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu3_clk_postmux0 = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL4,
++		.mask = 0x1,
++		.shift = 2,
++		.flags = CLK_MUX_ROUND_CLOSEST,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu3_clk_dyn0",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu3_clk_premux0.hw,
++			&sm1_cpu3_clk_mux0_div.hw,
++		},
++		.num_parents = 2,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu3_clk_premux1 = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL4,
++		.mask = 0x3,
++		.shift = 16,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu3_clk_dyn1_sel",
++		.ops = &clk_regmap_mux_ops,
++		.parent_data = (const struct clk_parent_data []) {
++			{ .fw_name = "xtal", },
++			{ .hw = &g12a_fclk_div2.hw },
++			{ .hw = &g12a_fclk_div3.hw },
++		},
++		.num_parents = 3,
++		/* This sub-tree is used a parking clock */
++		.flags = CLK_SET_RATE_NO_REPARENT
++	},
++};
++
++static struct clk_regmap sm1_cpu3_clk_mux1_div = {
++	.data = &(struct clk_regmap_div_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL4,
++		.shift = 20,
++		.width = 6,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu3_clk_dyn1_div",
++		.ops = &clk_regmap_divider_ro_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu3_clk_premux1.hw
++		},
++		.num_parents = 1,
++	},
++};
++
++static struct clk_regmap sm1_cpu3_clk_postmux1 = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL4,
++		.mask = 0x1,
++		.shift = 18,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu3_clk_dyn1",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu3_clk_premux1.hw,
++			&sm1_cpu3_clk_mux1_div.hw,
++		},
++		.num_parents = 2,
++		/* This sub-tree is used a parking clock */
++		.flags = CLK_SET_RATE_NO_REPARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu3_clk_dyn = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL4,
++		.mask = 0x1,
++		.shift = 10,
++		.flags = CLK_MUX_ROUND_CLOSEST,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu3_clk_dyn",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu3_clk_postmux0.hw,
++			&sm1_cpu3_clk_postmux1.hw,
++		},
++		.num_parents = 2,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++static struct clk_regmap sm1_cpu3_clk_pre = {
++	.data = &(struct clk_regmap_mux_data){
++		.offset = HHI_SYS_CPU_CLK_CNTL4,
++		.mask = 0x1,
++		.shift = 11,
++		.flags = CLK_MUX_ROUND_CLOSEST,
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "cpu3_clk_pre",
++		.ops = &clk_regmap_mux_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_cpu3_clk_dyn.hw,
++			&g12a_sys_pll.hw,
++		},
++		.num_parents = 2,
++		.flags = CLK_SET_RATE_PARENT,
++	},
++};
++
++//static u32 mux_table_sm1_cpu3[] = { 1 };
+ /* Datasheet names this field as "Cpu_clk_sync_mux_sel" bit 2 */
+ static struct clk_regmap sm1_cpu3_clk = {
+ 	.data = &(struct clk_regmap_mux_data){
+@@ -966,12 +1442,14 @@ static struct clk_regmap sm1_cpu3_clk = {
+ 	},
+ 	.hw.init = &(struct clk_init_data){
+ 		.name = "cpu3_clk",
+-		.ops = &clk_regmap_mux_ro_ops,
++		.ops = &clk_regmap_mux_ops,
+ 		.parent_hws = (const struct clk_hw *[]) {
+-			&g12a_cpu_clk.hw,
++			//&g12a_cpu_clk.hw,
+ 			/* This CPU also have a dedicated clock tree */
++			&sm1_cpu3_clk_pre.hw,
+ 		},
+ 		.num_parents = 1,
++		.flags = CLK_SET_RATE_PARENT | CLK_SET_RATE_NO_REPARENT,
+ 	},
+ };
+ 
+@@ -5844,6 +6322,30 @@ static struct clk_hw_onecell_data sm1_hw_onecell_data = {
+ 		[CLKID_CPU_CLK_DYN1_DIV]	= &g12a_cpu_clk_mux1_div.hw,
+ 		[CLKID_CPU_CLK_DYN1]		= &g12a_cpu_clk_postmux1.hw,
+ 		[CLKID_CPU_CLK_DYN]		= &g12a_cpu_clk_dyn.hw,
++		[CLKID_CPU1_CLK_PRE]		= &sm1_cpu1_clk_pre.hw,
++		[CLKID_CPU1_CLK_DYN]		= &sm1_cpu1_clk_dyn.hw,
++		[CLKID_CPU1_CLK_POSTMUX0]	= &sm1_cpu1_clk_postmux0.hw,
++		[CLKID_CPU1_CLK_POSTMUX1]	= &sm1_cpu1_clk_postmux1.hw,
++		[CLKID_CPU1_CLK_PREMUX0]	= &sm1_cpu1_clk_premux0.hw,
++		[CLKID_CPU1_CLK_PREMUX1]	= &sm1_cpu1_clk_premux1.hw,
++		[CLKID_CPU1_CLK_DYN0_DIV]	= &sm1_cpu1_clk_mux0_div.hw,
++		[CLKID_CPU1_CLK_DYN1_DIV]	= &sm1_cpu1_clk_mux1_div.hw,
++		[CLKID_CPU2_CLK_PRE]		= &sm1_cpu2_clk_pre.hw,
++		[CLKID_CPU2_CLK_DYN]		= &sm1_cpu2_clk_dyn.hw,
++		[CLKID_CPU2_CLK_POSTMUX0]	= &sm1_cpu2_clk_postmux0.hw,
++		[CLKID_CPU2_CLK_POSTMUX1]	= &sm1_cpu2_clk_postmux1.hw,
++		[CLKID_CPU2_CLK_PREMUX0]	= &sm1_cpu2_clk_premux0.hw,
++		[CLKID_CPU2_CLK_PREMUX1]	= &sm1_cpu2_clk_premux1.hw,
++		[CLKID_CPU2_CLK_DYN0_DIV]	= &sm1_cpu2_clk_mux0_div.hw,
++		[CLKID_CPU2_CLK_DYN1_DIV]	= &sm1_cpu2_clk_mux1_div.hw,
++		[CLKID_CPU3_CLK_PRE]		= &sm1_cpu3_clk_pre.hw,
++		[CLKID_CPU3_CLK_DYN]		= &sm1_cpu3_clk_dyn.hw,
++		[CLKID_CPU3_CLK_POSTMUX0]	= &sm1_cpu3_clk_postmux0.hw,
++		[CLKID_CPU3_CLK_POSTMUX1]	= &sm1_cpu3_clk_postmux1.hw,
++		[CLKID_CPU3_CLK_PREMUX0]	= &sm1_cpu3_clk_premux0.hw,
++		[CLKID_CPU3_CLK_PREMUX1]	= &sm1_cpu3_clk_premux1.hw,
++		[CLKID_CPU3_CLK_DYN0_DIV]	= &sm1_cpu3_clk_mux0_div.hw,
++		[CLKID_CPU3_CLK_DYN1_DIV]	= &sm1_cpu3_clk_mux1_div.hw,
+ 		[CLKID_CPU_CLK]			= &g12a_cpu_clk.hw,
+ 		[CLKID_CPU_CLK_DIV16_EN]	= &g12a_cpu_clk_div16_en.hw,
+ 		[CLKID_CPU_CLK_DIV16]		= &g12a_cpu_clk_div16.hw,
+@@ -6176,6 +6678,30 @@ static struct clk_regmap *const g12a_clk_regmaps[] = {
+ 	&sm1_cpu1_clk,
+ 	&sm1_cpu2_clk,
+ 	&sm1_cpu3_clk,
++	&sm1_cpu1_clk_pre,
++	&sm1_cpu1_clk_dyn,
++	&sm1_cpu1_clk_postmux0,
++	&sm1_cpu1_clk_postmux1,
++	&sm1_cpu1_clk_premux0,
++	&sm1_cpu1_clk_premux1,
++	&sm1_cpu1_clk_mux0_div,
++	&sm1_cpu1_clk_mux1_div,
++	&sm1_cpu2_clk_pre,
++	&sm1_cpu2_clk_dyn,
++	&sm1_cpu2_clk_postmux0,
++	&sm1_cpu2_clk_postmux1,
++	&sm1_cpu2_clk_premux0,
++	&sm1_cpu2_clk_premux1,
++	&sm1_cpu2_clk_mux0_div,
++	&sm1_cpu2_clk_mux1_div,
++	&sm1_cpu3_clk_pre,
++	&sm1_cpu3_clk_dyn,
++	&sm1_cpu3_clk_postmux0,
++	&sm1_cpu3_clk_postmux1,
++	&sm1_cpu3_clk_premux0,
++	&sm1_cpu3_clk_premux1,
++	&sm1_cpu3_clk_mux0_div,
++	&sm1_cpu3_clk_mux1_div,
+ 	&g12a_dsi_meas_mux,
+ 	&g12a_dsi_meas_div,
+ 	&g12a_dsi_meas,
+diff --git a/include/dt-bindings/clock/g12a-clkc.h b/include/dt-bindings/clock/g12a-clkc.h
+index 5a3b59e1aa84..01fe75edf5b0 100644
+--- a/include/dt-bindings/clock/g12a-clkc.h
++++ b/include/dt-bindings/clock/g12a-clkc.h
+@@ -212,6 +212,33 @@
+ #define CLKID_BT656_DIV				(MISC_BASE + 7)
+ #define CLKID_BT656_GATE			(MISC_BASE + 8)
+ 
+-#define CLKID_END				(MISC_BASE + 9)
++#define CLKID_CPU1_CLK_PRE			(MISC_BASE + 9)
++#define CLKID_CPU1_CLK_DYN			(MISC_BASE + 10)
++#define CLKID_CPU1_CLK_POSTMUX0			(MISC_BASE + 11)
++#define CLKID_CPU1_CLK_POSTMUX1			(MISC_BASE + 12)
++#define CLKID_CPU1_CLK_PREMUX0			(MISC_BASE + 13)
++#define CLKID_CPU1_CLK_PREMUX1			(MISC_BASE + 14)
++#define CLKID_CPU1_CLK_DYN0_DIV			(MISC_BASE + 15)
++#define CLKID_CPU1_CLK_DYN1_DIV			(MISC_BASE + 16)
++
++#define CLKID_CPU2_CLK_PRE			(MISC_BASE + 17)
++#define CLKID_CPU2_CLK_DYN			(MISC_BASE + 18)
++#define CLKID_CPU2_CLK_POSTMUX0			(MISC_BASE + 19)
++#define CLKID_CPU2_CLK_POSTMUX1			(MISC_BASE + 20)
++#define CLKID_CPU2_CLK_PREMUX0			(MISC_BASE + 21)
++#define CLKID_CPU2_CLK_PREMUX1			(MISC_BASE + 22)
++#define CLKID_CPU2_CLK_DYN0_DIV			(MISC_BASE + 23)
++#define CLKID_CPU2_CLK_DYN1_DIV			(MISC_BASE + 24)
++
++#define CLKID_CPU3_CLK_PRE			(MISC_BASE + 25)
++#define CLKID_CPU3_CLK_DYN			(MISC_BASE + 26)
++#define CLKID_CPU3_CLK_POSTMUX0			(MISC_BASE + 27)
++#define CLKID_CPU3_CLK_POSTMUX1			(MISC_BASE + 28)
++#define CLKID_CPU3_CLK_PREMUX0			(MISC_BASE + 29)
++#define CLKID_CPU3_CLK_PREMUX1			(MISC_BASE + 30)
++#define CLKID_CPU3_CLK_DYN0_DIV			(MISC_BASE + 31)
++#define CLKID_CPU3_CLK_DYN1_DIV			(MISC_BASE + 32)
++
++#define CLKID_END				(MISC_BASE + 33)
+ 
+ #endif /* __G12A_CLKC_H */

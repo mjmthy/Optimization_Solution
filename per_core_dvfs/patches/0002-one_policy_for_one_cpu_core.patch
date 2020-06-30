@@ -1,0 +1,164 @@
+diff --git a/drivers/amlogic/cpufreq/meson-cpufreq.c b/drivers/amlogic/cpufreq/meson-cpufreq.c
+index 89dacc4026e0..4ded2cf58b8a 100644
+--- a/drivers/amlogic/cpufreq/meson-cpufreq.c
++++ b/drivers/amlogic/cpufreq/meson-cpufreq.c
+@@ -52,7 +52,7 @@ static unsigned int get_cpufreq_table_index(u64 function_id,
+ static unsigned int meson_cpufreq_get_rate(unsigned int cpu)
+ {
+ 	u32 cur_cluster = topology_physical_package_id(cpu);
+-	u32 rate = clk_get_rate(clk[cur_cluster]) / 1000;
++	u32 rate = clk_get_rate(core_clk[cpu]) / 1000;
+ 
+ 	pr_debug("%s: cpu: %d, cluster: %d, freq: %u\n",
+ 		 __func__, cpu, cur_cluster, rate);
+@@ -152,7 +152,10 @@ static unsigned int meson_cpufreq_set_rate(struct cpufreq_policy *policy,
+ 		 * afer spin_lock_irqsave.it could not get the lock
+ 		 * for a long time.
+ 		 */
+-		ret = clk_set_parent(clk[cur_cluster], low_freq_clk_p);
++		if (cpu == 0)
++			ret = clk_set_parent(core_clk[cpu], low_freq_clk_p);
++		else
++			ret = clk_set_parent(clk_get_parent(core_clk[cpu]), low_freq_clk_p);
+ 		if (ret) {
+ 			pr_err("%s: error in setting low_freq_clk_p as parent\n",
+ 			       __func__);
+@@ -170,7 +173,10 @@ static unsigned int meson_cpufreq_set_rate(struct cpufreq_policy *policy,
+ 		ret =  clk_prepare_enable(high_freq_clk_p);
+ 		if (ret)
+ 			pr_err("enable high freq clk failed!\n");
+-		ret = clk_set_parent(clk[cur_cluster], high_freq_clk_p);
++		if (cpu == 0)
++			ret = clk_set_parent(core_clk[cpu], high_freq_clk_p);
++		else
++			ret = clk_set_parent(clk_get_parent(core_clk[cpu]), high_freq_clk_p);
+ 		if (ret) {
+ 			pr_err("%s: error in setting high_freq_clk_p as parent\n",
+ 			       __func__);
+@@ -185,7 +191,10 @@ static unsigned int meson_cpufreq_set_rate(struct cpufreq_policy *policy,
+ 			return ret;
+ 		}
+ 
+-		ret = clk_set_parent(clk[cur_cluster], low_freq_clk_p);
++		if (cpu == 0)
++			ret = clk_set_parent(core_clk[cpu], low_freq_clk_p);
++		else
++			ret = clk_set_parent(clk_get_parent(core_clk[cpu]), low_freq_clk_p);
+ 		if (ret) {
+ 			pr_err("%s: error in setting low_freq_clk_p rate!\n",
+ 			       __func__);
+@@ -206,7 +215,7 @@ static unsigned int meson_cpufreq_set_rate(struct cpufreq_policy *policy,
+ 		 * problem we will read back the clock rate and check it is
+ 		 * correct. This needs to be removed once clk core is fixed.
+ 		 */
+-		if (abs(clk_get_rate(clk[cur_cluster]) - new_rate * 1000)
++		if (abs(clk_get_rate(core_clk[cpu]) - new_rate * 1000)
+ 				> gap_rate) {
+ 			mutex_unlock(&cluster_lock[cur_cluster]);
+ 			ret = -EIO;
+@@ -329,7 +338,7 @@ static int meson_cpufreq_set_target(struct cpufreq_policy *policy,
+ 		pr_debug("Found OPP: %lu kHz, %u, tolerance: %u\n",
+ 			 freq_new / 1000, volt_new, volt_tol);
+ 	}
+-	freq_old = clk_get_rate(clk[cur_cluster]);
++	freq_old = clk_get_rate(core_clk[cpu]);
+ 
+ 	pr_debug("Scalling from %lu MHz, %u mV,cur_cluster_id:%u, --> %lu MHz, %u mV,new_cluster_id:%u\n",
+ 		 freq_old / 1000000, (volt_old > 0) ? volt_old / 1000 : -1,
+@@ -386,7 +395,7 @@ static int meson_cpufreq_set_target(struct cpufreq_policy *policy,
+ 		}
+ 	}
+ 
+-	freq_new = clk_get_rate(clk[cur_cluster]) / 1000000;
++	freq_new = clk_get_rate(core_clk[cpu]) / 1000000;
+ 	pr_debug("After transition, new lk rate %luMhz, volt %dmV\n",
+ 		 freq_new, meson_regulator_get_volate(cpu_reg) / 1000);
+ 	mutex_unlock(&cpufreq_target_lock);
+@@ -421,6 +430,7 @@ int choose_cpufreq_tables_index(const struct device_node *np, u32 cur_cluster)
+ 	return ret;
+ }
+ 
++#if 0
+ static void get_cluster_cores(unsigned int cpuid, struct cpumask *dstp)
+ {
+ 	int cpu;
+@@ -432,6 +442,7 @@ static void get_cluster_cores(unsigned int cpuid, struct cpumask *dstp)
+ 			cpumask_set_cpu(cpu, dstp);
+ 	}
+ }
++#endif
+ 
+ static int
+ aml_cpufreq_frequency_table_cpuinfo(struct cpufreq_policy *policy,
+@@ -557,6 +568,8 @@ static int meson_cpufreq_init(struct cpufreq_policy *policy)
+ 		return -ENODEV;
+ 	}
+ 
++	pr_err("[mjm] +++ meson_cpufreq_init(cpu: %d) +++\n", policy->cpu);
++
+ 	cur_cluster = topology_physical_package_id(policy->cpu);
+ 	cpu = policy->cpu;
+ 	cpu_dev = get_cpu_device(cpu);
+@@ -579,11 +592,11 @@ static int meson_cpufreq_init(struct cpufreq_policy *policy)
+ 		goto free_np;
+ 	}
+ 
+-	clk[cur_cluster] = of_clk_get_by_name(np, CORE_CLK);
+-	if (IS_ERR(clk[cur_cluster])) {
++	core_clk[cpu] = of_clk_get_by_name(np, CORE_CLK);
++	if (IS_ERR(core_clk[cpu])) {
+ 		pr_err("failed to get cpu clock, %ld\n",
+-		       PTR_ERR(clk[cur_cluster]));
+-		ret = PTR_ERR(clk[cur_cluster]);
++		       PTR_ERR(core_clk[cpu]));
++		ret = PTR_ERR(core_clk[cpu]);
+ 		goto free_mem;
+ 	}
+ 
+@@ -644,7 +657,8 @@ static int meson_cpufreq_init(struct cpufreq_policy *policy)
+ 		low_dsu_rate = DSU_LOW_RATE;
+ 	pr_info("value of low_dsu_rate %u\n", low_dsu_rate);
+ 
+-	get_cluster_cores(cpu, policy->cpus);
++	//get_cluster_cores(cpu, policy->cpus);
++	cpumask_set_cpu(cpu, policy->cpus);
+ 
+ 	tables_index = choose_cpufreq_tables_index(np, cur_cluster);
+ 	ret = dev_pm_opp_of_add_table_indexed(cpu_dev, tables_index);
+@@ -681,10 +695,10 @@ static int meson_cpufreq_init(struct cpufreq_policy *policy)
+ 	cpufreq_data->volt_tol = volt_tol;
+ 	cpufreq_data->policy = policy;
+ 	policy->driver_data = cpufreq_data;
+-	policy->clk = clk[cur_cluster];
++	policy->clk = core_clk[cpu];
+ 	policy->cpuinfo.transition_latency = transition_latency;
+ 	policy->suspend_freq = get_table_max(freq_table[cur_cluster]);
+-	policy->cur = clk_get_rate(clk[cur_cluster]) / 1000;
++	policy->cur = clk_get_rate(core_clk[cpu]) / 1000;
+ 
+ 	/*
+ 	 * if uboot default cpufreq larger than freq_table's max,
+@@ -709,8 +723,8 @@ static int meson_cpufreq_init(struct cpufreq_policy *policy)
+ 	if (!IS_ERR(cpu_reg))
+ 		devm_regulator_put(cpu_reg);
+ free_clk:
+-	if (!IS_ERR(clk[cur_cluster]))
+-		clk_put(clk[cur_cluster]);
++	if (!IS_ERR(core_clk[cpu]))
++		clk_put(core_clk[cpu]);
+ 	if (!IS_ERR(low_freq_clk_p))
+ 		clk_put(low_freq_clk_p);
+ 	if (!IS_ERR(high_freq_clk_p))
+diff --git a/drivers/amlogic/cpufreq/meson-cpufreq.h b/drivers/amlogic/cpufreq/meson-cpufreq.h
+index 8d311bd2f81d..f5630b52cc18 100644
+--- a/drivers/amlogic/cpufreq/meson-cpufreq.h
++++ b/drivers/amlogic/cpufreq/meson-cpufreq.h
+@@ -18,7 +18,7 @@
+ #define DSU_CLK		"dsu_clk"
+ #define DSU_PRE_PARENT "dsu_pre_parent"
+ 
+-static struct clk *clk[MAX_CLUSTERS];
++static struct clk *core_clk[4];
+ static struct cpufreq_frequency_table *freq_table[MAX_CLUSTERS];
+ 
+ /* Default voltage_tolerance */
