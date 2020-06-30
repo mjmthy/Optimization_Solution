@@ -52,9 +52,11 @@
 
 # 代码实现
 
-基础的内核代码可以通过https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git获取
+代码实现以补丁的形式提供
 
-然后依次打上patches目录下的补丁即可
+基础的内核代码位于过https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git
+
+补丁位于patches目录
 
 具体各个补丁的说明见List 1
 
