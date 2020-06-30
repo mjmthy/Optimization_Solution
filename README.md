@@ -19,7 +19,7 @@
 在bootloader(自己使用的是uboot 2015)中发生crash时，现场的信息非常有限，往往只有一些寄存器信息，而不像Linux内核中发生crash时有完整的堆栈信息可供定位问题，这无形中加大了分析bootloader下的死机问题的难度。本解决方案实现了bootloader下的堆栈支持来解决该问题
 
 ```
-  d.per_cpu_dvfs
+  d.per_core_dvfs
 ```
 
 利用A55上的DynamIQ特性，实现单个核的动态调频调压(A53及之前的ARM架构，只支持以cluster为单位的调频调压)
