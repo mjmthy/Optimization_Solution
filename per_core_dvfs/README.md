@@ -62,7 +62,7 @@
 
 | 补丁名             | 修改说明                                                     |
 | ------------------ | ------------------------------------------------------------ |
-| 0001-add_xxx.patch | 为CPU1~3添加单独的clk tree描述，并将CPU1~3的parent设置为单独的clock tree |
+| 0001-add_xxx.patch | 为CPU1\~3添加单独的clk tree描述，并将CPU1\~3的parent设置为单独的clock tree |
 | 0002-one_xxx.patch | 支持一个policy管理一个CPU核心                                |
 | 0003-fix_xxx.patch | 将OPP中超过1GHZ的频率电压对删除(单独的clock tree只支持<=1GHZ的频率输出)，并将电压固定到最高 |
 
